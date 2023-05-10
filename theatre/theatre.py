@@ -11,11 +11,8 @@ def login_banner():
     Print a simple login banner
     """
     msg = "Welcome to the theatre app"
-    padding = int((80 - len(msg)) / 2)
     print("*"*80 + "\n")
-    print(" " * padding + msg + " "*padding) 
-    
-    
+    print(msg.center(80,)) 
     print("\n" + "*"*80)
     
     
