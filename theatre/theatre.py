@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 import sys 
+import string
+import yaml 
+from decimal import Decimal
+
+
 def quit():
     """Exit the application
     """
@@ -29,7 +34,30 @@ def mainloop():
     if moption.lower() == 'q':
         quit() 
 
+def expand_range(config_range):
+    
+    first = config_range[0][0]
+    last = config_range[0][2]
+    
+    return [range(ord(first),ord(last))]
+         
+    
+    
+def load_config(filename="./config.yml"):
+    with open(filename,'r') as file:
+        theatre_config = yaml.safe_load(file)[0]
+    
+    theatre_config['costs']['seat_rows'] = expand_range((theatre_config['costs']['seat_rows']))
+    
+    print(expand_range((theatre_config['costs']['seat_rows'])))
+
+
 if __name__ == '__main__':
     
+    # Some defaults for testing
+
+    load_config()
+    
     mainloop()
+    
     

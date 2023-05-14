@@ -1,0 +1,14 @@
+---
+- costs:
+    seat_rows: [a:z] 
+    premium_rows: [a:c]
+    standard_rows: [c:r]
+    budget_rows: [r:z]
+    
+    premium_cost: 3.00
+    standard_cost: 2.00
+    budget_cost: 1.00
+    
+    premiere_factor: 1.5
+    standard_factor: 1.0
+    matinee_factor: 0.75 
