@@ -1,6 +1,7 @@
 ---
 - costs:
-    seat_rows: [a:z] 
+    seat_rows: [a:z]
+    seats_per_row: 50
     premium_rows: [a:c]
     standard_rows: [c:r]
     budget_rows: [r:z]
