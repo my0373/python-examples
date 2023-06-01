@@ -55,37 +55,37 @@ def parseArguments():
 
     return args
 
-def calc_x(args):
-    if args.dimension == "overworld":
-        return int(args.x / 8)
-    elif args.dimension == "nether":
-        return int(args.x * 8)
+def calc_x(x,dimension):
+    if dimension == "overworld":
+        return int(x / 8)
+    elif dimension == "nether":
+        return int(x * 8)
 
-def calc_y(args):
-    return args.y
+def calc_y(y,dimension):
+    return y
 
-def calc_z(args):
-    if args.dimension == "overworld":
-        return int(args.z / 8)
-    elif args.dimension == "nether":
-        return int(args.z * 8)
+def calc_z(z,dimension):
+    if dimension == "overworld":
+        return int(z / 8)
+    elif dimension == "nether":
+        return int(z * 8)
 
 
-def calc_dimension(args):
+def calc_dimension(dimension):
     """
     Work out the target dimension
     """
-    if args.dimension == "overworld":
+    if dimension == "overworld":
         return "nether"
-    elif args.dimension == "nether":
+    elif dimension == "nether":
         return "overworld"
 
 def main():
     cmdargs = parseArguments()
-    x = calc_x(cmdargs)
-    y = calc_y(cmdargs)
-    z = calc_z(cmdargs)
-    dstdimension = calc_dimension(cmdargs)
+    x = calc_x(cmdargs.x,cmdargs.dimension)
+    y = calc_y(cmdargs.y,cmdargs.dimension)
+    z = calc_z(cmdargs.z,cmdargs.dimension)
+    dstdimension = calc_dimension(cmdargs.dimension)
     print(x,y,z,dstdimension)
 
 
